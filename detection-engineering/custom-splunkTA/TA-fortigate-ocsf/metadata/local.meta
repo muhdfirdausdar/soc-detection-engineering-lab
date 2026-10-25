@@ -1,0 +1,21 @@
+[props]
+export = system
+
+[props/fortigate/EXTRACT-pri]
+access = read : [ * ], write : [ * ]
+export = system
+owner = nobody
+version = 10.4.3
+modtime = 1791118677.750897300
+
+[props/fortigate/EVAL-facility]
+version = 10.4.3
+modtime = 1791120083.622634100
+
+[props/fortigate/EXTRACT-src_endpoint_ip]
+version = 10.4.3
+modtime = 1791269534.453715200
+
+[props/fortigate/EXTRACT-tmp_src_endpoint_location_country]
+version = 10.4.3
+modtime = 1791272453.435772800

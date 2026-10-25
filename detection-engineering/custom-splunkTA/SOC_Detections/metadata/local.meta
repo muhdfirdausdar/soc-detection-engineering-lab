@@ -1,0 +1,136 @@
+[lookups/allowed_accounts.csv]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791724974.728329700
+
+[lookups/allowed_devices.csv]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1789820794.584359400
+
+[macros/auth_detection_fields]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791800462.307990500
+
+[lookups/detection_metadata.csv]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791804448.282714900
+
+[indexes/alerts]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1789825588.196957500
+
+[lookups/allowed_users.csv]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1789893430.924336700
+
+[savedsearches/Unrecognised%20User%20Logon]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854832.833235100
+
+[indexes/firewall]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791075828.625335800
+
+[indexes/detection_alerts]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791288038.563292600
+
+[indexes/windows]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791288171.612251700
+
+[savedsearches/Unrecognised%20Device%20Logon]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854801.616667200
+
+[app/ui]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791610916.395086400
+
+[app/launcher]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791610916.412715600
+
+[app/package/check_for_updates]
+version = 10.4.3
+modtime = 1791610916.430871800
+
+[transforms/allowed_accounts]
+access = read : [ * ], write : [ * ]
+export = system
+owner = nobody
+version = 10.4.3
+modtime = 1791726587.050602600
+
+[macros/soc_common_fields]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791786127.834816700
+
+[savedsearches/User%20Account%20Locked%20Out]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854915.841007900
+
+[savedsearches/User%20Account%20Changed]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854854.106835400
+
+[savedsearches/User%20Account%20Created%20or%20Enabled]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854872.253694000
+
+[savedsearches/User%20Account%20Disabled%20or%20Deleted]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854890.961335800
+
+[macros/win_common_detection_fields]
+access = read : [ * ], write : [ admin, splunk-system-role ]
+export = system
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791854744.542828600
+
+[indexes/web]
+owner = muhdfirdausdar
+version = 10.4.3
+modtime = 1791868361.039769800

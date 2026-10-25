@@ -1,0 +1,7 @@
+ruleId,alertTitle,severity,mitreTactic,mitreTechniqueId,mitreTechniqueName
+WIN-AUTH-001,Unrecognised Device Logon,High,Initial Access,T1078,Valid Accounts
+WIN-AUTH-002,Unrecognised User Logon,High,Initial Access,T1078,Valid Accounts
+WIN-AUTH-003,User Account Locked Out,Medium,Credential Access,T1110,Brute Force
+WIN-PRIV-001,User Account Changed,Medium,Persistence; Privilege Escalation,T1098,Account Manipulation
+WIN-PRIV-002,User Account Created or Enabled,Medium,Persistence,T1136,Create Account
+WIN-PRIV-003,User Account Disabled or Deleted,Medium,Impact,T1531,Account Access Removal

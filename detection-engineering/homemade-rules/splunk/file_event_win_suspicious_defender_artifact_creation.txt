@@ -1,0 +1,20 @@
+index=windows sourcetype=sysmon EventCode=11
+(
+    TargetFilename="*\\mpengine.dll"
+    OR TargetFilename="*\\mpam*.exe"
+    OR TargetFilename="*\\mpas*.dll"
+    OR TargetFilename="*\\MpSigStub.exe"
+)
+(
+    TargetFilename="*\\INetCache\\IE\\*"
+    OR TargetFilename="*\\Temp\\*"
+    OR TargetFilename="*\\Downloads\\*"
+    OR TargetFilename="*\\Desktop\\*"
+    OR TargetFilename="*\\AppData\\Local\\*"
+    OR TargetFilename="*\\AppData\\Roaming\\*"
+)
+NOT Image="*\\MsMpEng.exe"
+NOT Image="*\\MpCmdRun.exe"
+NOT Image="*\\MpSigStub.exe"
+NOT Image="*\\NisSrv.exe"
+NOT User="NT AUTHORITY*"

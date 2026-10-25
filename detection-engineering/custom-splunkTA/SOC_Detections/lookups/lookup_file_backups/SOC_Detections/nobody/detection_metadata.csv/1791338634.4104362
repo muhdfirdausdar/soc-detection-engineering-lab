@@ -1,0 +1,2 @@
+ruleId,alertTitle,severity,mitreTactic,mitreTechniqueId,mitreTechniqueName
+WIN-AUTH-001,Unrecognised Device Logon,medium,Initial Access,T1078,Valid Accounts

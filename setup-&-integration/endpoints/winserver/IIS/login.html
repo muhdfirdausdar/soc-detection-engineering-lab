@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC Homelabbing | Employee Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #1d2430;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .topbar {
+      background: linear-gradient(135deg, #0b4d8c, #1770b8);
+      color: #fff;
+      padding: 18px 0;
+    }
+    .topbar .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff;
+      color: #0b4d8c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .content {
+      padding: 30px 0;
+    }
+    .card {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #dfe5ef;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #dfe5ef;
+      border-radius: 6px;
+    }
+    button {
+      background: #0b4d8c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    a {
+      color: #0b4d8c;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container inner">
+      <div class="brand">
+        <div class="logo">SH</div>
+        <div>
+          <h1>SOC Homelabbing</h1>
+          <p>Employee Authentication</p>
+        </div>
+      </div>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/downloads.html">Downloads</a>
+        <a href="/employees.html">Employees</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <div class="card">
+      <h2>Employee Login</h2>
+      <form action="/login" method="post">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+
+        <button type="submit">Sign In</button>
+      </form>
+      <p><a href="/index.html">Back to Home</a></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+title: EICAR Detection in User Staging Directory
+id: 7b3e8c9d-1a4f-4d62-b9e7-f123456789ab
+status: experimental
+description: >-
+  Detects Microsoft Defender identification of the EICAR anti-malware test
+  file within user-controlled staging locations. This rule is intended for
+  validation of malware detection and monitoring pipelines.
+references:
+  - https://www.eicar.org/download-anti-malware-testfile/
+author: DausDar
+date: 2026/10/17
+logsource:
+  product: windows
+  service: defender
+detection:
+  selection_event:
+    EventCode: 1116
+  selection_threat:
+    ThreatName|contains: 'EICAR'
+  selection_path:
+    Path|contains:
+      - '\AppData\'
+      - '\Temp\'
+      - '\INetCache\'
+  filter_system:
+    User|startswith: 'NT AUTHORITY'
+  condition: selection_event and selection_threat and selection_path and not filter_system
+falsepositives:
+  - Authorized antivirus validation testing
+  - Security awareness exercises
+  - Purple team activities
+level: low
+tags:
+  - attack.execution
+  - attack.t1204
+  - attack.t1204.002

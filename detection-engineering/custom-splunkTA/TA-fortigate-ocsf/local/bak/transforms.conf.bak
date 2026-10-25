@@ -1,0 +1,4 @@
+[extract_pri]
+REGEX = ^<(\d+)>
+FORMAT = pri::$1
+WRITE_META = false

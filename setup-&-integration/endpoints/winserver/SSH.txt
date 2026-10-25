@@ -1,0 +1,19 @@
+# Check service
+Get-Service sshd
+
+# Download OpenSSH if not exists:
+https://github.com/PowerShell/Win32-OpenSSH/releases
+
+# Setup ssh
+Start-Service sshd
+Set-Service sshd -StartupType Automatic
+New-NetFirewallRule `
+-Name sshd `
+-DisplayName "OpenSSH Server" `
+-Direction Inbound `
+-Protocol TCP `
+-Action Allow `
+-LocalPort 22
+
+# Test connection
+Test-NetConnection 10.10.10.10 -Port 22

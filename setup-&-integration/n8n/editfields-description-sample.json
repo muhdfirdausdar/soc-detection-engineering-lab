@@ -1,0 +1,69 @@
+{{
+(() => {
+
+let intro = "";
+
+if ($json.body.result.Target_Account_Name) {
+
+  intro =
+    "Hello Team,\n\n" +
+    "SOC Lab has detected \"" + ($json.body.result.alertTitle || "") +
+    "\" on device \"" + ($json.body.result.ComputerName || "") +
+    "\" performed by user \"" + ($json.body.result.Subject_Account_Name || "") +
+    "\" on user \"" + ($json.body.result.Target_Account_Name || "") +
+    "\" at " + ($json.body.result.timestamp || "") + ".\n\n" +
+    "Please review the event details below and determine whether the activity is expected or requires further investigation.\n\n";
+
+} else {
+
+  intro =
+    "Hello Team,\n\n" +
+    "SOC Lab has detected \"" + ($json.body.result.alertTitle || "") +
+    "\" on device \"" + ($json.body.result.ComputerName || "") +
+    "\" performed by user \"" + ($json.body.result.user || "") +
+    "\" at " + ($json.body.result.timestamp || "") + ".\n\n" +
+    "Please review the event details below and determine whether the activity is expected or requires further investigation.\n\n";
+
+}
+
+return intro +
+"\n\nAffected Assets / Users\n" +
+"***********************\n" +
+"Agent Name: " + ($json.body.result.agentName || "") + "\n" +
+"Hostname: " + ($json.body.result.ComputerName || "") + "\n" +
+"User: " + ($json.body.result.user || "") + "\n" +
+"Subject User Name: " + ($json.body.result.Subject_Account_Name || "") + "\n" +
+"Target User Name: " + ($json.body.result.Target_Account_Name || "") + "\n" +
+
+"\r\n\r\nNetwork Details\n" +
+"***************\n" +
+"Source IP: " + ($json.body.result.src_ip || "") + "\n" +
+"Destination IP: \n" +
+"Port(s): \n" +
+"URL / Domain: \n" +
+"Protocol: \n" +
+
+"\r\n\r\nWindows Event Details\n" +
+"*********************\n" +
+"Event ID: " + ($json.body.result.EventCode || "") + "\n" +
+"Logon Type: " + ($json.body.result.Logon_Type || "") + "\n" +
+"Process Name: " + ($json.body.result.Process_Name || "") + "\n" +
+"Parent Process: \n" +
+"Command Line: \n" +
+
+"\r\n\r\nOther Information\n" +
+"*****************\n" +
+"MITRE ATT&CK Tactic: " + ($json.body.result.mitreTactic || "") + "\n" +
+"MITRE ATT&CK Technique: " +
+($json.body.result.mitreTechniqueId || "") +
+(($json.body.result.mitreTechniqueId && $json.body.result.mitreTechniqueName) ? " - " : "") +
+($json.body.result.mitreTechniqueName || "") + "\n" +
+"Alert ID: " + ($json.body.result.alertId || "") + "\n" +
+"Severity: " + ($json.body.result.severity || "") + "\n" +
+
+"\r\n\r\nFull Log\n" +
+"*********\n" +
+($json.body.result.rawLog || "");
+
+})()
+}}

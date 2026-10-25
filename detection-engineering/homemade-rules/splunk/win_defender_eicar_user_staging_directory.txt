@@ -1,0 +1,8 @@
+index=windows sourcetype=defender EventCode=1116
+(Name="*EICAR*" OR Threat_Name="*EICAR*" OR ThreatName="*EICAR*")
+(
+    Path="*\\AppData\\*"
+    OR Path="*\\Temp\\*"
+    OR Path="*\\INetCache\\*"
+)
+NOT User="NT AUTHORITY*"

@@ -1,0 +1,46 @@
+title: Suspicious Defender Engine Or Signature File Creation By Non Defender Process
+id: de5a38b1-4bb2-402a-bf3b-9a7428f7be2a
+status: experimental
+description: >
+  Detects creation of Microsoft Defender engine, signature, or service-related files
+  (mpengine.dll, mpam*, mpas*, MpSigStub.exe) in highly abused directories like Temp, 
+  Downloads, Desktop, or AppData by processes other than legitimate Microsoft Defender components.
+references:
+  - Internal Lab Validation (BlueHammer/FunnyApp)
+author: DausDar
+date: 2026-10-17
+tags:
+  - attack.defense_evasion
+  - attack.t1036
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection_file:
+    TargetFilename|contains:
+      - '\mpengine.dll'
+      - '\mpam'
+      - '\mpas'
+      - '\MpSigStub.exe'
+  selection_path:
+    TargetFilename|contains:
+      - '\Temp\'
+      - '\INetCache\IE\'
+      - '\Downloads\'
+      - '\Desktop\'
+      - '\AppData\Local\'
+      - '\AppData\Roaming\'
+  filter_defender:
+    Image|endswith:
+      - '\MsMpEng.exe'
+      - '\MpCmdRun.exe'
+      - '\MpSigStub.exe'
+      - '\NisSrv.exe'
+  filter_system_accounts:
+    User|startswith: 'NT AUTHORITY'
+  condition: selection_file and selection_path and not 1 of filter_*
+falsepositives:
+  - Microsoft Defender troubleshooting or manual updates
+  - Security product testing
+  - Malware analysis laboratories
+level: high
